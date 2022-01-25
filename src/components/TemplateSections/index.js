@@ -47,7 +47,6 @@ const Templateisations = ({
 
 	const [animatedBtn, setanimBtn] = useState(false);
 	const [animated, setanimated] = useState(false);
-	const [page1, setpage1] = useState(true);
 
 	const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
@@ -88,15 +87,6 @@ const Templateisations = ({
 		
 	};
 
-	const [showModal, setShowModal] = useState(false);
-
-	const openModal = () => {
-
-		setShowModal(prev => {
-			return !prev;
-		});
-	};
-
 	const BtnModalSmooth = buttonModal ? 'false' : 'true';
 	const BtnModalDur = buttonModal ? 100 : 700;
 	
@@ -116,7 +106,6 @@ const Templateisations = ({
 				primary={primary ? 1 : 0} 
 				dark={dark ? 1 : 0}
 				dark2={dark2 ? 1 : 0} 
-				onClick={openModal}
 			>{buttonLabel}</Button>
 		</Animated>
 	) : (
@@ -144,107 +133,10 @@ const Templateisations = ({
 	const AnimDescription = animatedCss(description, 2000, animation3, 'fadeOutLeft');
 	const AnimDescription2 = animatedCss(description2, 4000, animation3, 'fadeOutLeft');
 
-	const changePage = () => {
-		setpage1(prev => {
-			return !prev;
-		});
-	};
-
-	// const RealSection = !isMobile ? (
-	// 	page1 ? (
-	// 		<Dip animatedCss={animatedCss}
-	// 			Btn={Btn}
-	// 			headLine={headLine}
-	// 			animation1={animation1}
-	// 			topLine={topLine}
-	// 			animation2={animation2}
-	// 			description={description}
-	// 			animation3={animation3}
-	// 			img={img}
-	// 			alt={alt}
-	// 			imgStart={imgStart}
-	// 			lightText={lightText}
-	// 			changePage={changePage}
-	// 			lightBg={lightBg}
-	// 			id={id}
-	// 			nextPage={nextPage}
-	// 			buttonModal={buttonModal}
-	// 			showModal={showModal}
-	// 			setShowModal={setShowModal}
-	// 			WIP={WIP}
-	// 		/>
-	// 	) : (
-	// 		<Travel animatedCss={animatedCss}
-	// 			Btn={Btn}
-	// 			headLine={headLine}
-	// 			animation1={animation1}
-	// 			topLine={topLine}
-	// 			animation2={animation2}
-	// 			description={description}
-	// 			animation3={animation3}
-	// 			img={img}
-	// 			alt={alt}
-	// 			imgStart={imgStart}
-	// 			lightText={lightText}
-	// 			changePage={changePage}
-	// 			lightBg={lightBg}
-	// 			id={id}
-	// 			nextPage={nextPage}
-	// 			buttonModal={buttonModal}
-	// 			showModal={showModal}
-	// 			setShowModal={setShowModal}
-	// 			WIP={WIP}
-	// 		/>
-	// 	)
-	// ) : (
-	// 	<>
-	// 		<Dip animatedCss={animatedCss}
-	// 			Btn={Btn}
-	// 			headLine={headLine}
-	// 			animation1={animation1}
-	// 			topLine={topLine}
-	// 			animation2={animation2}
-	// 			description={description}
-	// 			animation3={animation3}
-	// 			img={img}
-	// 			alt={alt}
-	// 			imgStart={imgStart}
-	// 			lightText={lightText}
-	// 			changePage={changePage}
-	// 			lightBg={lightBg}
-	// 			id={id}
-	// 			nextPage={nextPage}
-	// 			buttonModal={buttonModal}
-	// 			showModal={showModal}
-	// 			setShowModal={setShowModal}
-	// 			WIP={WIP}
-	// 		/>
-	// 		<Travel animatedCss={animatedCss}
-	// 			Btn={Btn}
-	// 			headLine={headLine}
-	// 			animation1={animation1}
-	// 			topLine={topLine}
-	// 			animation2={animation2}
-	// 			description={description}
-	// 			animation3={animation3}
-	// 			img={img}
-	// 			alt={alt}
-	// 			imgStart={imgStart}
-	// 			lightText={lightText}
-	// 			changePage={changePage}
-	// 			lightBg={lightBg}
-	// 			id={id}
-	// 			nextPage={nextPage}
-	// 			buttonModal={buttonModal}
-	// 			showModal={showModal}
-	// 			setShowModal={setShowModal}
-	// 			WIP={WIP}
-	// 		/>
-	// 	</>
-	// );
 
 	useEffect(() => {
 		window.addEventListener('scroll', changeDisplay);
+	// eslint-disable-next-line
 	}, []);
 		
 	return (
@@ -275,7 +167,6 @@ const Templateisations = ({
 							</Column2>
 						</TemplateRow>
 					</TemplateWrapper>
-					{/* {buttonModal ? <Modal showModal={showModal} setShowModal={setShowModal} WIP={WIP}/> : null} */}
 
 				</TemplateContainer>
 	);

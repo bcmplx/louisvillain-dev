@@ -79,6 +79,7 @@ const Formations = () => {
 	useEffect(() => {
 		window.addEventListener('scroll', animations);
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 		
