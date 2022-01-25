@@ -8,8 +8,8 @@ import { profil, contact } from '../Data/Data';
 
 import IntroSection  from '../components/IntroSection';
 // import FormationsSection from '../components/FormationsSection';
-// import CompetencesSection from '../components/CompetencesSection';
-// import RealisationsSection from '../components/RealisationsSection';
+import CompetencesSection from '../components/CompetencesSection';
+import RealisationsSection from '../components/RealisationsSection';
 import Footer from '../components/Footer';
 
 const Home = () => {
@@ -28,9 +28,11 @@ const Home = () => {
 			<IntroSection />
 			
 			<TemplateSections {...profil} />
-			{/*
+			
 			<CompetencesSection/>
+			
 			<RealisationsSection />
+			{/*
 			<FormationsSection />
 			*/}
 			<TemplateSections {...contact} />

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+// import { Carousel } from 'react-responsive-carousel';
+// import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styled from 'styled-components/macro';
 import eiffelImg from '../../images/eiffel.svg';
 import travelImg from '../../images/travel.svg';
@@ -14,7 +14,16 @@ const index = () => {
 		<Container id="realisations">
 			<H1>MES RÉALISATIONS</H1>
 			<Wrapper>
-				<Carousel interval='4000' showArrows={true} autoPlay={true} infiniteLoop={true} css={'@media screen and (max-width: 420px){max-width: 400px;} @media screen and (max-width: 375px){max-width: 370px;}'}>
+
+				<div>
+					<img src={travelImg} />
+					<a href="https://travel-louisvillain.netlify.app/">
+						
+						<p className="legend">Travel</p>
+					</a>
+				</div>
+
+				{/* <Carousel interval='4000' showArrows={true} autoPlay={true} infiniteLoop={true} css={'@media screen and (max-width: 420px){max-width: 400px;} @media screen and (max-width: 375px){max-width: 370px;}'}>
 					<div> 
 						<img src={eiffelImg} />
 						<a href="https://daysinparis.netlify.app/">
@@ -50,11 +59,8 @@ const index = () => {
 							<p className="legend">Train Booking</p>
 						</a>
 					</div>
-					{/*<div>
-						<img src={travelImg} />
-						<p className="legend">Legend 6</p>
-					</div> */}
-				</Carousel>
+					
+				</Carousel> */}
 			</Wrapper>
 
 		</Container>
