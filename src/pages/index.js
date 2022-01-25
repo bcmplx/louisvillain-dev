@@ -3,14 +3,14 @@ import React, {useState} from 'react';
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
 
-// import TemplateSections from '../components/TemplateSections';
-// import { profil, contact } from '../components/SectionsData/Data';
+import TemplateSections from '../components/TemplateSections';
+import { profil, contact } from '../Data/Data';
 
 import IntroSection  from '../components/IntroSection';
 // import FormationsSection from '../components/FormationsSection';
 // import CompetencesSection from '../components/CompetencesSection';
 // import RealisationsSection from '../components/RealisationsSection';
-// import Footer from '../components/Footer';
+import Footer from '../components/Footer';
 
 const Home = () => {
 
@@ -26,13 +26,15 @@ const Home = () => {
 			<Sidebar isOpen={isOpen} toggle={toggle}/>
 			 <Navbar toggle={toggle}/>
 			<IntroSection />
-			{/*
+			
 			<TemplateSections {...profil} />
+			{/*
 			<CompetencesSection/>
 			<RealisationsSection />
 			<FormationsSection />
-			<TemplateSections {...contact} />*/}
-			{/* <Footer />  */}
+			*/}
+			<TemplateSections {...contact} />
+			<Footer /> 
 		</>
 	);
 };
