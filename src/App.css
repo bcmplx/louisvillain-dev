@@ -1,38 +1,395 @@
 .App {
-  text-align: center;
+	text-align: center;
+	color: #fefefe;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-image: url('https://images.pexels.com/photos/574069/pexels-photo-574069.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'); */
+  background-attachment: fixed;
+  color: #fefefe;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: #181818 !important; 
+}
+	  
+a:hover {
+	color: #fefefe;
+	transition: 0.2s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  .icon {
+	padding: 30% !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+li {
+
+	list-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+	  
+/* a { 
+	color: #fefefe; 
+	text-decoration: inherit;
+}  */
+
+ol, ul {
+	padding-left: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+strong {
+	color: #b3a577;
+	position: relative;
+}
+.reactcolor {
+	color: #5CD9FF;
+}
+
+.nodecolor {
+	color: #026e00;
+}
+
+strong::before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 4px;
+	bottom: 0;
+	left: 0;
+	background: #b3a577;
+	transform: scaleX(0);
+	transform-origin: top left;
+	transition: transform 0.7s ease-in;
+}
+strong:hover::before {
+	transform: scaleX(1);		
+}
+
+.contentpageone {
+	margin: 0 10%;
+	font-family: "Share Tech Mono", monospace;
+	position: relative;
+	width: 80vw;
+	height: 99vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.contentpageone h1 {
+	background: linear-gradient(-45deg, #026e00, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	margin: 5% 7% 0% 7%;
+	font-size: 2.5rem;
+	font-weight: 700;
+	line-height: 1.1;
+	border-radius: 9px; 
+}
+
+.contentpagetwo {
+	margin: 0 10%;
+	font-family: "Share Tech Mono", monospace;
+	position: relative;
+	width: 80vw;
+	/* height: calc(100vh + 50px); */
+}
+
+.contentpagetwo h2 {
+	position: relative;
+	background: linear-gradient(-45deg, #026e00, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	margin: 2vw 5vw;
+	border-radius: 6px; 
+}
+.realisationEach {
+	width: 40vw;
+	border: 1px solid #fefefe;
+	margin: auto;
+	margin-bottom: 1vw;
+	padding: 2%;
+	border-radius: 7px; 
+}
+.formationEach {
+	width: 50vw;
+	border: 1px solid #fefefe;
+	margin: auto;
+	margin-bottom: 1vw;
+	padding: 2%;
+	border-radius: 7px; 
+}
+
+a { 
+	color: inherit; 
+	text-decoration: inherit;
+} 
+
+/* a:hover {
+	color: #fefefe;
+	transition: 0.3s ease;
+} */
+.icon {
+	padding: 30% !important;
+}
+
+.footer__video--titre {
+	z-index: 1;
+	width: 60%;
+	margin: auto;
+	text-align: center;
+	background: #141414;
+	height: 90%;  
+	border: 1px solid #fefefe;
+	padding: 1.5%;
+	border-radius: 7px; 
+}
+h2 {
+	font-size: 1.7vw;
+}
+h3 {
+	font-size: 1.5vw;
+}
+.arrow {
+	text-align: center;
+	margin: 1% 2% 5% 2%;
+}
+.bounce {
+	-moz-animation: bounce 2s infinite;
+	-webkit-animation: bounce 2s infinite;
+	animation: bounce 2s infinite;
+}
+
+.mobiletop {
+	display: none !important;
+}
+
+.arrow2 {
+	text-align: left;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	display: none;
+	position: fixed;
+}
+.bounce2 {
+	-moz-animation: bounce 2s infinite;
+	-webkit-animation: bounce 2s infinite;
+	animation: bounce 2s infinite;
+}
+
+.animated-icon2 span:nth-child(1) {
+	top: 0px;
+}
+
+.animated-icon2 span:nth-child(2),
+.animated-icon2 span:nth-child(3) {
+top: 10px;
+}
+
+.animated-icon2 span:nth-child(4) {
+top: 20px;
+}
+
+.animated-icon2.open span:nth-child(1) {
+top: 11px;
+width: 0%;
+left: 50%;
+}
+
+.animated-icon2.open span:nth-child(2) {
+-webkit-transform: rotate(45deg);
+-moz-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+
+.animated-icon2.open span:nth-child(3) {
+-webkit-transform: rotate(-45deg);
+-moz-transform: rotate(-45deg);
+-o-transform: rotate(-45deg);
+transform: rotate(-45deg);
+}
+
+.animated-icon2.open span:nth-child(4) {
+top: 11px;
+width: 0%;
+left: 50%;
+}
+
+
+@keyframes bounce {
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-30px);
+	}
+	60% {
+		transform: translateY(-15px);
+	}
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+
+/*                       */
+/* ********** BREAKPOINT WIDTH *********** 1400+*/
+/*                       */
+
+@media only screen and (min-width: 1400px){	  
+	    	  	  
+	  
+	  
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1399px){
+	  
+	  
+	
+}
+
+
+
+
+@media only screen and (min-width: 1400px){
+	.footer__video--titre {
+		width: 60%;
+		height: 90%;  
+		padding: 1.5%;
+		border-radius: 7px; 
+	}
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px){
+	.footer__video--titre {
+		width: 70%;
+		height: 90%;
+		padding: 1.5%;
+		border-radius: 7px; 
+	}
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+	.footer__video--titre {
+		width: 70%;
+		height: 90%;  
+		padding: 1.5%;
+		border-radius: 7px; 
+	}
+	.realisationEach {
+		width: 45vw; 
+	}
+
+	h2 {
+		font-size: 2.5vw;
+	}
+	h3 {
+		font-size: 2.3vw;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+	.contentpagetwo {
+		margin: 0 18%;
+		width: auto;
+	}	
+
+	.footer__video--titre {
+		width: 100%;
+		height: 100%;  
+		padding: 1.5%;
+		border-radius: 7px; 
+	}
+	.realisationEach {
+		width: 50vw; 
+	}
+	h2 {
+		font-size: 2.6vw;
+	}
+	h3 {
+		font-size: 2.2vw;
+	}
+}
+@media only screen and (min-width: 577px) and (max-width: 767px){
+	.footer__video--titre {
+		width: 80%;
+		height: 90%;  
+		padding: 1.5%;
+		border-radius: 7px; 
+	}
+	.contentpagetwo {
+		margin: auto;
+		 width: 55vw;
+	}
+
+	.realisationEach {
+		width: 90%;
+	}
+
+	h2 {
+		font-size: 3vw;
+	}
+	h3 {
+		font-size: 2.6vw;
+	}
+}
+
+/*            */
+/* MOBILE RESPONSIVE < 576px */
+/*            */
+
+@media only screen and (max-width: 576px){
+	.contentpagetwo {
+		margin: auto;
+		width: 100%;
+	}
+
+	.contentpagetwo h2 {
+		margin: 14vw 5vw 2vw 5vw;
+		/* width: 80%; */
+		font-size: 6.6vw;
+	}
+
+	.realisationEach {
+		width: 90%;
+	}
+	.formationEach {
+		width: 90%;
+	}
+
+	.mobiletop {
+		display: flex !important;
+	}
+
+	h2 {
+		font-size: 4.4vw;
+	}
+	h3 {
+		font-size: 3.8vw;
+	}
+	
 }
