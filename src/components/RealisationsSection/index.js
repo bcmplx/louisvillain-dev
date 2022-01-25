@@ -3,7 +3,7 @@ import React from 'react';
 // import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styled from 'styled-components/macro';
 // import eiffelImg from '../../images/eiffel.svg';
-import travelImg from '../../images/travel.svg';
+import travelImg from '../../images/travel.png';
 // import carouselimg1 from '../../images/carousel/carousel1.svg';
 // import carouselimg2 from '../../images/carousel/carousel5.svg';
 // import carouselimg3 from '../../images/carousel/carousel6.svg';
@@ -15,52 +15,42 @@ const index = () => {
 			<H1>MES RÉALISATIONS</H1>
 			<Wrapper>
 
-				<div>
-					<img src={travelImg} alt="Travel Website"/>
-					<a href="https://travel-louisvillain.netlify.app/">
-						
-						<p className="legend">Travel</p>
-					</a>
-				</div>
-
-				{/* <Carousel interval='4000' showArrows={true} autoPlay={true} infiniteLoop={true} css={'@media screen and (max-width: 420px){max-width: 400px;} @media screen and (max-width: 375px){max-width: 370px;}'}>
-					<div> 
-						<img src={eiffelImg} />
-						<a href="https://daysinparis.netlify.app/">
-							
-							<p className="legend">Days in Paris</p>
-						</a>
-					</div>
-					<div>
-						<img src={carouselimg1} />
-						<a href="https://louisvillain-dev.com/">
-							
-							<p className="legend">Portfolio</p>
-						</a>
-					</div>
-					<div>
-						<img src={carouselimg2} />
-						<a href="https://calendar-louisv.netlify.app/">
-							
-							<p className="legend">Calendar</p>
-						</a>
-					</div>
-					<div>
-						<img src={travelImg} />
-						<a href="https://travel-louisvillain.netlify.app/">
-							
+				<Card>
+					<ImgContainer>
+						<ImgCard src={travelImg} alt="Travel Website"/>
+					</ImgContainer>
+					
+					<InfoContainer>
+						<a href="https://travel-louisvillain.netlify.app/">						
 							<p className="legend">Travel</p>
 						</a>
-					</div>
-					<div>
-						<img src={carouselimg3} />
-						<a href="https://tictactrip.netlify.app/">
-							
-							<p className="legend">Train Booking</p>
-						</a>
-					</div>
+					</InfoContainer>
 					
-				</Carousel> */}
+				</Card>
+
+				<Card>
+					<ImgCard src={travelImg} alt="Travel Website"/>
+					<a href="https://travel-louisvillain.netlify.app/">						
+						<p className="legend">Travel</p>
+					</a>
+				</Card>
+
+				<Card>
+					<ImgCard src={travelImg} alt="Travel Website"/>
+					<a href="https://travel-louisvillain.netlify.app/">						
+						<p className="legend">Travel</p>
+					</a>
+				</Card>
+
+				<Card>
+					<ImgCard src={travelImg} alt="Travel Website"/>
+					<a href="https://travel-louisvillain.netlify.app/">						
+						<p className="legend">Travel</p>
+					</a>
+				</Card>
+					
+
+				
 			</Wrapper>
 
 		</Container>
@@ -71,41 +61,48 @@ export default index;
 
 const Wrapper = styled.div`
 	display: grid;
+	grid-template-columns: 1fr 1fr;
 	z-index: 1;
-	height: 860px;
-	width: 50%;
+	height: auto;
+	width: 80%;
 	max-width: 1200px;
 	margin-right: auto;
 	margin-left: auto;
 	padding: 1rem 5rem;
 	justify-content: center;
 
+	@media screen and (min-width: 769px) {
+		min-width: 730px;
+	}
+
 	@media screen and (max-width: 768px){
 		width: 90%;
+		grid-template-columns: 1fr;
 	}
 
 	.slider-wrapper {
 		border: 1px solid white;
 		padding: 0.5rem;
 		border-radius: 10px;
+		/* grid-template-columns: 1fr; */
 	}
 `;
 
 const Container = styled.div`
 	color: #fefefe;
 	background: ${({lightBg}) => (lightBg ? '#f9f9f9' : '#152436')};
-	height: 1200px;
+	height: auto;
 	overflow: hidden;
 	padding: 2rem;
 
 	@media screen and (max-width: 768px) {
 		padding: 100px 0;
-		height: 1000px;
+		/* height: 1000px; */
 	}
 	
 	@media screen and (max-width: 468px) {
 		padding: 70px 0;
-		height: 950px;
+		/* height: 950px; */
 	}
 `;
 
@@ -126,3 +123,27 @@ const H1 = styled.h1`
 		margin: 60px 0 64px 0;
 	}
 `;
+
+const Card = styled.div`
+	width: 95%;
+	margin: 1rem;
+	border: 5px solid white;
+	border-radius: 10px;
+	/* padding: 0.3rem; */
+`
+
+const ImgCard = styled.img`
+	width: 100%;
+	border-radius: 5px;
+	height: 100%;
+	object-fit: cover;	
+`
+
+const InfoContainer = styled.div`
+	position: absolute;
+
+`
+const ImgContainer = styled.div`
+	position: absolute;
+
+`
