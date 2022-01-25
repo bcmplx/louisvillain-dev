@@ -3,27 +3,58 @@ import React from 'react';
 // import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styled from 'styled-components/macro';
 // import eiffelImg from '../../images/eiffel.svg';
-import travelImg from '../../images/travel.png';
+import travelImg from '../../images/travel2.png';
 // import carouselimg1 from '../../images/carousel/carousel1.svg';
 // import carouselimg2 from '../../images/carousel/carousel5.svg';
 // import carouselimg3 from '../../images/carousel/carousel6.svg';
 
 
 const index = () => {
-	return (
-		<Container id="realisations">
-			<H1>MES RÉALISATIONS</H1>
-			<Wrapper>
 
-				<Card>
-					<ImgContainer>
+	let test = (event) => {
+		// event.target.style.background = "black"
+		event.target.classList.add("onHover")
+		document.getElementById("imgContainer").classList.add('grey')
+		// console.log("ici : ", event.target)
+	}
+
+	let leave = (event) => {
+
+		setTimeout(() => {
+			event.target.classList.remove("onHover")
+			event.target.parentNode.classList.remove("onHover")
+		}, 300)
+		// event.target.classList.remove("onHover")
+		// event.target.parentNode.classList.remove("onHover")
+		document.getElementById("imgContainer").classList.remove('grey')
+	}
+
+
+	return (
+		<Container id="realisations" >
+			<H1>MES RÉALISATIONS</H1>
+			<Wrapper className='wrapper'>
+
+				<Card >
+					<ImgContainer id="imgContainer">
 						<ImgCard src={travelImg} alt="Travel Website"/>
 					</ImgContainer>
 					
-					<InfoContainer>
-						<a href="https://travel-louisvillain.netlify.app/">						
-							<p className="legend">Travel</p>
-						</a>
+					<InfoContainer onMouseOver={test} onMouseLeave={leave}>
+						<TopBox className='info' >
+							<div>
+							Travel
+								{/* <a href="https://travel-louisvillain.netlify.app/">	</a> */}
+							</div>
+							
+						</TopBox > 
+
+						<BottomBox className='info' >
+							<div>
+								CSS HTML
+							</div>
+						</BottomBox>
+						
 					</InfoContainer>
 					
 				</Card>
@@ -129,7 +160,7 @@ const Card = styled.div`
 	margin: 1rem;
 	border: 5px solid white;
 	border-radius: 10px;
-	/* padding: 0.3rem; */
+	position: relative;
 `
 
 const ImgCard = styled.img`
@@ -141,9 +172,61 @@ const ImgCard = styled.img`
 
 const InfoContainer = styled.div`
 	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
 
 `
 const ImgContainer = styled.div`
 	position: absolute;
+	height: 100%;
+	filter: brightness(1.75);
+	z-index: 1;
+	transition: all 0.4s ease-in-out;
 
+	&:hover {
+		opacity: 0.2;
+		transition: all 0.4s ease-in-out;
+	}
+
+
+`
+
+const TopBox = styled.div`
+	width: 100%;
+	height: 0%;
+	/* opacity: 0; */
+	transition: all 0.4s ease-in-out;
+	background-color: white;
+	color: black;
+	z-index: 12;
+	position: absolute;
+	top: 0; 
+
+	div {
+		height: inherit;
+		display: flex;
+		align-items: flex-end;
+	}
+
+	a {
+		position: relative;
+		height: inherit;
+	}
+
+	&:hover {
+		/* transition: all 0.4s ease-in-out;
+		opacity: 0.9; */
+		/* height: 30%; */
+	}
+`
+
+const BottomBox = styled.div`
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: white;
+	color: black;
+	transition: all 0.4s ease-in-out;
+	height: 0%;
 `
