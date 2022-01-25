@@ -2,11 +2,11 @@ import React from 'react';
 // import { Carousel } from 'react-responsive-carousel';
 // import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styled from 'styled-components/macro';
-import eiffelImg from '../../images/eiffel.svg';
+// import eiffelImg from '../../images/eiffel.svg';
 import travelImg from '../../images/travel.svg';
-import carouselimg1 from '../../images/carousel/carousel1.svg';
-import carouselimg2 from '../../images/carousel/carousel5.svg';
-import carouselimg3 from '../../images/carousel/carousel6.svg';
+// import carouselimg1 from '../../images/carousel/carousel1.svg';
+// import carouselimg2 from '../../images/carousel/carousel5.svg';
+// import carouselimg3 from '../../images/carousel/carousel6.svg';
 
 
 const index = () => {
@@ -16,7 +16,7 @@ const index = () => {
 			<Wrapper>
 
 				<div>
-					<img src={travelImg} />
+					<img src={travelImg} alt="Travel Website"/>
 					<a href="https://travel-louisvillain.netlify.app/">
 						
 						<p className="legend">Travel</p>
