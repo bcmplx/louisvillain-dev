@@ -14,9 +14,9 @@ import {TemplateContainer,
 	ImgWrap,
 	Img} from './TemplateElements';
 import { useMediaQuery } from 'react-responsive';
-import Modal from '../Modal';
-import Dip from '../RealisationsSection/dip';
-import Travel from '../RealisationsSection/travel';
+// import Modal from '../Modal';
+// import Dip from '../RealisationsSection/dip';
+// import Travel from '../RealisationsSection/travel';
 
 const Templateisations = ({
 	lightBg, 
@@ -150,98 +150,98 @@ const Templateisations = ({
 		});
 	};
 
-	const RealSection = !isMobile ? (
-		page1 ? (
-			<Dip animatedCss={animatedCss}
-				Btn={Btn}
-				headLine={headLine}
-				animation1={animation1}
-				topLine={topLine}
-				animation2={animation2}
-				description={description}
-				animation3={animation3}
-				img={img}
-				alt={alt}
-				imgStart={imgStart}
-				lightText={lightText}
-				changePage={changePage}
-				lightBg={lightBg}
-				id={id}
-				nextPage={nextPage}
-				buttonModal={buttonModal}
-				showModal={showModal}
-				setShowModal={setShowModal}
-				WIP={WIP}
-			/>
-		) : (
-			<Travel animatedCss={animatedCss}
-				Btn={Btn}
-				headLine={headLine}
-				animation1={animation1}
-				topLine={topLine}
-				animation2={animation2}
-				description={description}
-				animation3={animation3}
-				img={img}
-				alt={alt}
-				imgStart={imgStart}
-				lightText={lightText}
-				changePage={changePage}
-				lightBg={lightBg}
-				id={id}
-				nextPage={nextPage}
-				buttonModal={buttonModal}
-				showModal={showModal}
-				setShowModal={setShowModal}
-				WIP={WIP}
-			/>
-		)
-	) : (
-		<>
-			<Dip animatedCss={animatedCss}
-				Btn={Btn}
-				headLine={headLine}
-				animation1={animation1}
-				topLine={topLine}
-				animation2={animation2}
-				description={description}
-				animation3={animation3}
-				img={img}
-				alt={alt}
-				imgStart={imgStart}
-				lightText={lightText}
-				changePage={changePage}
-				lightBg={lightBg}
-				id={id}
-				nextPage={nextPage}
-				buttonModal={buttonModal}
-				showModal={showModal}
-				setShowModal={setShowModal}
-				WIP={WIP}
-			/>
-			<Travel animatedCss={animatedCss}
-				Btn={Btn}
-				headLine={headLine}
-				animation1={animation1}
-				topLine={topLine}
-				animation2={animation2}
-				description={description}
-				animation3={animation3}
-				img={img}
-				alt={alt}
-				imgStart={imgStart}
-				lightText={lightText}
-				changePage={changePage}
-				lightBg={lightBg}
-				id={id}
-				nextPage={nextPage}
-				buttonModal={buttonModal}
-				showModal={showModal}
-				setShowModal={setShowModal}
-				WIP={WIP}
-			/>
-		</>
-	);
+	// const RealSection = !isMobile ? (
+	// 	page1 ? (
+	// 		<Dip animatedCss={animatedCss}
+	// 			Btn={Btn}
+	// 			headLine={headLine}
+	// 			animation1={animation1}
+	// 			topLine={topLine}
+	// 			animation2={animation2}
+	// 			description={description}
+	// 			animation3={animation3}
+	// 			img={img}
+	// 			alt={alt}
+	// 			imgStart={imgStart}
+	// 			lightText={lightText}
+	// 			changePage={changePage}
+	// 			lightBg={lightBg}
+	// 			id={id}
+	// 			nextPage={nextPage}
+	// 			buttonModal={buttonModal}
+	// 			showModal={showModal}
+	// 			setShowModal={setShowModal}
+	// 			WIP={WIP}
+	// 		/>
+	// 	) : (
+	// 		<Travel animatedCss={animatedCss}
+	// 			Btn={Btn}
+	// 			headLine={headLine}
+	// 			animation1={animation1}
+	// 			topLine={topLine}
+	// 			animation2={animation2}
+	// 			description={description}
+	// 			animation3={animation3}
+	// 			img={img}
+	// 			alt={alt}
+	// 			imgStart={imgStart}
+	// 			lightText={lightText}
+	// 			changePage={changePage}
+	// 			lightBg={lightBg}
+	// 			id={id}
+	// 			nextPage={nextPage}
+	// 			buttonModal={buttonModal}
+	// 			showModal={showModal}
+	// 			setShowModal={setShowModal}
+	// 			WIP={WIP}
+	// 		/>
+	// 	)
+	// ) : (
+	// 	<>
+	// 		<Dip animatedCss={animatedCss}
+	// 			Btn={Btn}
+	// 			headLine={headLine}
+	// 			animation1={animation1}
+	// 			topLine={topLine}
+	// 			animation2={animation2}
+	// 			description={description}
+	// 			animation3={animation3}
+	// 			img={img}
+	// 			alt={alt}
+	// 			imgStart={imgStart}
+	// 			lightText={lightText}
+	// 			changePage={changePage}
+	// 			lightBg={lightBg}
+	// 			id={id}
+	// 			nextPage={nextPage}
+	// 			buttonModal={buttonModal}
+	// 			showModal={showModal}
+	// 			setShowModal={setShowModal}
+	// 			WIP={WIP}
+	// 		/>
+	// 		<Travel animatedCss={animatedCss}
+	// 			Btn={Btn}
+	// 			headLine={headLine}
+	// 			animation1={animation1}
+	// 			topLine={topLine}
+	// 			animation2={animation2}
+	// 			description={description}
+	// 			animation3={animation3}
+	// 			img={img}
+	// 			alt={alt}
+	// 			imgStart={imgStart}
+	// 			lightText={lightText}
+	// 			changePage={changePage}
+	// 			lightBg={lightBg}
+	// 			id={id}
+	// 			nextPage={nextPage}
+	// 			buttonModal={buttonModal}
+	// 			showModal={showModal}
+	// 			setShowModal={setShowModal}
+	// 			WIP={WIP}
+	// 		/>
+	// 	</>
+	// );
 
 	useEffect(() => {
 		window.addEventListener('scroll', changeDisplay);
@@ -249,11 +249,7 @@ const Templateisations = ({
 		
 	return (
 		
-		<>			
-			{nextPage ? ( 
-				RealSection
-			) : (
-				<TemplateContainer lightBg={lightBg} id={id} nextPage={nextPage}>
+		<TemplateContainer lightBg={lightBg} id={id} nextPage={nextPage}>
 					<TemplateWrapper>
 						<TemplateRow imgStart={imgStart}>
 							<Column1>
@@ -279,12 +275,9 @@ const Templateisations = ({
 							</Column2>
 						</TemplateRow>
 					</TemplateWrapper>
-					{buttonModal ? <Modal showModal={showModal} setShowModal={setShowModal} WIP={WIP}/> : null}
+					{/* {buttonModal ? <Modal showModal={showModal} setShowModal={setShowModal} WIP={WIP}/> : null} */}
 
 				</TemplateContainer>
-
-			)}				
-		</>
 	);
 };
 
