@@ -90,6 +90,7 @@ export const NavLinks = styled(LinkScroll)`
 	padding: 0 1rem;
 	height: 100%;
 	cursor: pointer;
+	transition: 0.1s all ease-in-out;
 
 	&.activeBorder {
 		border-bottom: 3px solid #029056;
@@ -102,7 +103,7 @@ export const NavLinks = styled(LinkScroll)`
 
 	&:hover {
 		font-weight: 500;
-		transform: scale(1.1);
+		transform: scale(1.05);
 		transition: 0.1s all ease-in-out;
 	}
 `;

@@ -37,7 +37,7 @@ const IntroSection = () => {
 			isVisible={true}
 			style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
 		>
-			<IntroH1>Bonjour, je m&#39;appelle Louis, et je suis développeur</IntroH1>
+			<IntroH1>Bonjour, je m&#39;appelle Louis, et je suis développeur freelance</IntroH1>
 			<IntroP>
 				<span className="type-animationOne animating">Je suis à la recherche de missions.</span>
 			</IntroP>
