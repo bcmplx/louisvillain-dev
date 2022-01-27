@@ -16,7 +16,7 @@ export const TemplateContainer = styled.div`
 	
 	@media screen and (max-width: 520px) {
 		padding: 70px 0;
-		height: ${({nextPage}) => (nextPage ? '1500px' : '1100px')};
+		height: ${({nextPage}) => (nextPage ? '1500px' : '1180px')};
 	}
 `;
 

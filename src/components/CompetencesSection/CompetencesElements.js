@@ -14,7 +14,7 @@ export const CompetencesContainer = styled.div`
 	}
 
 	@media screen and (max-width: 480px){
-		height: 1550px;
+		height: 1580px;
 	}
 `;
 

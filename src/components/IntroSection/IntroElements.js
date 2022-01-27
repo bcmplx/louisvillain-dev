@@ -8,7 +8,7 @@ export const IntroContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	padding: 0 30px; 
-	height: 1000px;
+	height: 100vh;
 	position: relative;
 	z-index: 1;
 
@@ -24,11 +24,11 @@ export const IntroContainer = styled.div`
 	}
 
 	@media screen and (max-width: 768px) {
-		height: 850px;
+		height: 100vh;
 	}
 
 	@media screen and (max-width: 480px) {
-		height: 750px;
+		height: 100vh;
 	}
 `;
 
