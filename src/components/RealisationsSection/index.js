@@ -3,7 +3,10 @@ import React, { useState } from 'react';
 // import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styled from 'styled-components/macro';
 // import eiffelImg from '../../images/eiffel.svg';
-import travelImg from '../../images/travel2.png';
+import travelImg from '../../images/travel.png';
+import dipImg from '../../images/dip.png';
+import vImg from '../../images/veronikawebsite.png';
+
 import {Button} from '../Services/ButtonElement';
 // import carouselimg1 from '../../images/carousel/carousel1.svg';
 // import carouselimg2 from '../../images/carousel/carousel5.svg';
@@ -45,13 +48,13 @@ const Index = () => {
 			<Wrapper className='wrapper'>
 
 				<Card >
-					<ImgContainer id="imgContainer">
-						<ImgCard src={travelImg} alt="Travel Website"/>
-					</ImgContainer>
+					<ImgContainer id="imgContainer" >
+						<ImgCard src={travelImg} alt="Travel Website" className='bright'/>
+					</ImgContainer> 
 					
 					<InfoContainer onMouseOver={test} onMouseLeave={leave}>
 						<TopBox className='info' >
-							<div>Travel</div>
+							<div>TRAVEL</div>
 							<div>React JS</div>
 							
 						</TopBox > 
@@ -76,13 +79,13 @@ const Index = () => {
 
 				<Card >
 					<ImgContainer id="imgContainer">
-						<ImgCard src={travelImg} alt="Travel Website"/>
+						<ImgCard src={dipImg} alt="Travel Website"/>
 					</ImgContainer>
 					
 					<InfoContainer onMouseOver={test} onMouseLeave={leave}>
 						<TopBox className='info' >
-							<div>Travel</div>
-							<div>React JS</div>
+							<div>Days in Paris</div>
+							<div>React JS / PostgresQL</div>
 							
 						</TopBox > 
 
@@ -106,12 +109,12 @@ const Index = () => {
 
 				<Card >
 					<ImgContainer id="imgContainer">
-						<ImgCard src={travelImg} alt="Travel Website"/>
+						<ImgCard src={vImg} alt="Travel Website"/>
 					</ImgContainer>
 					
 					<InfoContainer onMouseOver={test} onMouseLeave={leave}>
 						<TopBox className='info' >
-							<div>Travel</div>
+							<div>Portfolio</div>
 							<div>React JS</div>
 							
 						</TopBox > 
@@ -193,6 +196,8 @@ const Wrapper = styled.div`
 	@media screen and (max-width: 768px){
 		width: 90%;
 		grid-template-columns: 1fr;
+		padding: 0.5rem 0;
+		margin: auto;
 	}
 
 	.slider-wrapper {
@@ -246,6 +251,10 @@ const Card = styled.div`
 	border-radius: 10px;
 	position: relative;
 	height: 300px;
+
+	@media screen and (max-width: 768px) {
+		margin: 1rem auto;
+	}
 `
 
 const ImgCard = styled.img`
@@ -273,7 +282,7 @@ const InfoContainer = styled.div`
 const ImgContainer = styled.div`
 	position: absolute;
 	height: 100%;
-	filter: brightness(1.75);
+	/* filter: brightness(1.75); */
 	z-index: 1;
 	transition: all 0.4s ease-in-out;
 	width: 100%;
@@ -284,13 +293,16 @@ const ImgContainer = styled.div`
 		transition: all 0.4s ease-in-out;
 	}
 
+	&.bright {
+		filter: brightness(1.75);
+	}
 
 `
 
 const TopBox = styled.div`
 	width: 100%;
 	height: 0%;
-	opacity: 0.7;
+	opacity: 1;
 	transition: all 0.4s ease-in-out;
 	background-color: white;
 	color: black;
@@ -308,6 +320,8 @@ const TopBox = styled.div`
 
 	div:nth-child(2n) {
 		align-items: baseline;
+		font-size: 0.8rem;
+		color: aqua
 	}
 
 	a {
@@ -330,7 +344,7 @@ const BottomBox = styled.div`
 	color: black;
 	transition: all 0.4s ease-in-out;
 	height: 0%;
-	opacity: 0.7;
+	opacity: 1;
 	text-align: center;
 `
 
