@@ -7,7 +7,7 @@ import travelImg from '../../images/travel.png';
 import dipImg from '../../images/dip.png';
 import vImg from '../../images/veronikawebsite.png';
 
-import {Button} from '../Services/ButtonElement';
+import {ExtButton} from '../Services/ButtonElement';
 // import carouselimg1 from '../../images/carousel/carousel1.svg';
 // import carouselimg2 from '../../images/carousel/carousel5.svg';
 // import carouselimg3 from '../../images/carousel/carousel6.svg';
@@ -61,7 +61,7 @@ const Index = () => {
 
 						<BottomBox className='info' >
 							<ButtonContainer>
-								<Button to="profil" 
+								<ExtButton href="https://travel-louisvillain.netlify.app/" target="_blank" rel="noopener noreferrer"
 									onMouseEnter={onHover} 
 									onMouseLeave={onHover}
 									smooth={true}
@@ -69,7 +69,7 @@ const Index = () => {
 									offset={-80}
 								>
 									See More 
-								</Button>
+								</ExtButton>
 							</ButtonContainer>
 						</BottomBox>
 						
@@ -91,7 +91,7 @@ const Index = () => {
 
 						<BottomBox className='info' >
 							<ButtonContainer>
-								<Button to="profil" 
+								<ExtButton to="" 
 									onMouseEnter={onHover} 
 									onMouseLeave={onHover}
 									smooth={true}
@@ -99,7 +99,7 @@ const Index = () => {
 									offset={-80}
 								>
 									See More 
-								</Button>
+								</ExtButton>
 							</ButtonContainer>
 						</BottomBox>
 						
@@ -121,7 +121,7 @@ const Index = () => {
 
 						<BottomBox className='info' >
 							<ButtonContainer>
-								<Button to="profil" 
+								<ExtButton href="https://veronika-grebenshchikova.com/" target="_blank" rel="noopener noreferrer"
 									onMouseEnter={onHover} 
 									onMouseLeave={onHover}
 									smooth={true}
@@ -129,7 +129,7 @@ const Index = () => {
 									offset={-80}
 								>
 									See More 
-								</Button>
+								</ExtButton>
 							</ButtonContainer>
 						</BottomBox>
 						
@@ -151,7 +151,7 @@ const Index = () => {
 
 						<BottomBox className='info' >
 							<ButtonContainer>
-								<Button to="profil" 
+								<ExtButton to="profil" 
 									onMouseEnter={onHover} 
 									onMouseLeave={onHover}
 									smooth={true}
@@ -159,7 +159,7 @@ const Index = () => {
 									offset={-80}
 								>
 									See More 
-								</Button>
+								</ExtButton>
 							</ButtonContainer>
 						</BottomBox>
 						
@@ -355,8 +355,5 @@ const ButtonContainer = styled.div`
 	justify-content: center;
 	padding: 0.8rem;
 
-	a {
-		border-radius: 15px !important;
-		opacity: 1;
-	}
+
 `
