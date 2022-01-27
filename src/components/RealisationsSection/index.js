@@ -6,6 +6,7 @@ import styled from 'styled-components/macro';
 import travelImg from '../../images/travel.png';
 import dipImg from '../../images/dip.png';
 import vImg from '../../images/veronikawebsite.png';
+import jamendo from '../../images/jamendo.jpg'
 
 import {ExtButton} from '../Services/ButtonElement';
 // import carouselimg1 from '../../images/carousel/carousel1.svg';
@@ -139,27 +140,19 @@ const Index = () => {
 
 				<Card >
 					<ImgContainer id="imgContainer">
-						<ImgCard src={travelImg} alt="Travel Website"/>
+						<ImgCard src={jamendo} alt="Travel Website" contain={true}/>
 					</ImgContainer>
 					
 					<InfoContainer onMouseOver={test} onMouseLeave={leave}>
-						<TopBox className='info' >
-							<div>Travel</div>
-							<div>React JS</div>
+						<TopBox className='info' incoming={true} >
+							<div>Jamendo</div>
+							<div>React JS / PostgresQL</div>
 							
 						</TopBox > 
 
-						<BottomBox className='info' >
+						<BottomBox className='info' incoming={true} >
 							<ButtonContainer>
-								<ExtButton to="profil" 
-									onMouseEnter={onHover} 
-									onMouseLeave={onHover}
-									smooth={true}
-									duration={800}
-									offset={-80}
-								>
-									See More 
-								</ExtButton>
+								Coming Soon
 							</ButtonContainer>
 						</BottomBox>
 						
@@ -262,6 +255,7 @@ const ImgCard = styled.img`
 	border-radius: 5px;
 	height: 100%;
 	object-fit: cover;	
+	object-fit: ${({contain}) => contain ? 'contain' : 'cover'};
 `
 
 const InfoContainer = styled.div`
@@ -271,7 +265,7 @@ const InfoContainer = styled.div`
 	z-index: 2;
 	overflow: hidden;
 	opacity: 0;
-	transition: all 0.5s ease-in-out;
+	transition: all 0.9s ease-in-out;
 
 	&:hover {
 		opacity: 1;
@@ -304,8 +298,9 @@ const TopBox = styled.div`
 	height: 0%;
 	opacity: 1;
 	transition: all 0.4s ease-in-out;
-	background-color: white;
-	color: black;
+
+	background-color: ${({incoming}) => incoming ? 'black' : 'white'};
+	color: ${({incoming}) => incoming ? 'white' : 'black'};
 	z-index: 12;
 	position: absolute;
 	top: 0; 
@@ -340,8 +335,8 @@ const BottomBox = styled.div`
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	background: white;
-	color: black;
+	background-color: ${({incoming}) => incoming ? 'black' : 'white'};
+	color: ${({incoming}) => incoming ? 'white' : 'black'};
 	transition: all 0.4s ease-in-out;
 	height: 0%;
 	opacity: 1;

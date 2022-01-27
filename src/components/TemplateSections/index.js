@@ -32,6 +32,7 @@ const Templateisations = ({
 	buttonModal,
 	WIP,
 	buttonTo,
+	mailto,
 	img, 
 	alt,
 	primary,
@@ -97,7 +98,7 @@ const Templateisations = ({
 			animationOutDuration={1000} 
 			isVisible={true}
 		>
-			<Button to={buttonTo}
+			<Button to={mailto ? 'mailto:louis.villainl@gmail.com' : buttonTo}
 				smooth={BtnModalSmooth}
 				duration={BtnModalDur}
 				spy={true}
@@ -115,7 +116,7 @@ const Templateisations = ({
 			animationOutDuration={1000} 
 			isVisible={false}
 		>
-			<Button to={buttonTo}
+			<Button to={mailto ? 'mailto:louis.villainl@gmail.com' : buttonTo}
 				smooth={BtnModalSmooth}
 				duration={BtnModalDur}
 				spy={true}
