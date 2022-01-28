@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react';
-import { Button } from '../Services/ButtonElement';
+import { Button, ExtButton } from '../Services/ButtonElement';
 import {Animated} from 'react-animated-css';
 import {TemplateContainer, 
 	TemplateWrapper, 
@@ -32,6 +32,7 @@ const Templateisations = ({
 	buttonModal,
 	WIP,
 	buttonTo,
+	mailto,
 	img, 
 	alt,
 	primary,
@@ -97,7 +98,7 @@ const Templateisations = ({
 			animationOutDuration={1000} 
 			isVisible={true}
 		>
-			<Button to={buttonTo}
+			{mailto ? (<ExtButton href="mailto:louis.villainl@gmail.com"
 				smooth={BtnModalSmooth}
 				duration={BtnModalDur}
 				spy={true}
@@ -106,7 +107,20 @@ const Templateisations = ({
 				primary={primary ? 1 : 0} 
 				dark={dark ? 1 : 0}
 				dark2={dark2 ? 1 : 0} 
-			>{buttonLabel}</Button>
+			>{buttonLabel}</ExtButton>) 
+			
+			: (
+			<Button to={buttonTo}
+			smooth={BtnModalSmooth}
+			duration={BtnModalDur}
+			spy={true}
+			exact="true"
+			offset={-80}
+			primary={primary ? 1 : 0} 
+			dark={dark ? 1 : 0}
+			dark2={dark2 ? 1 : 0} 
+		>{buttonLabel}</Button>)}
+			
 		</Animated>
 	) : (
 		<Animated animationIn={animation1} 
@@ -115,7 +129,7 @@ const Templateisations = ({
 			animationOutDuration={1000} 
 			isVisible={false}
 		>
-			<Button to={buttonTo}
+			<Button to={mailto ? 'mailto:louis.villainl@gmail.com' : buttonTo}
 				smooth={BtnModalSmooth}
 				duration={BtnModalDur}
 				spy={true}
