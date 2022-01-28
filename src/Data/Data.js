@@ -5,9 +5,9 @@ export const profil = {
 	lightBg: true,
 	lightText: false,
 	lightTextDesc: false,
-	topLine: 'Dev Front & Back | JavaScript | React & Node.js',
+	topLine: 'Dev Front  | JavaScript | React & Node.js',
 	headLine: 'Louis Villain',
-	description: `Développeur Fullstack habitant en région parisienne, je suis spécialisé dans la conception d'expériences créatives et d'interfaces fonctionnelles en utilisant Javascript.`,
+	description: `Développeur Front-end habitant en région parisienne, je suis spécialisé dans la conception d'expériences créatives et d'interfaces fonctionnelles en utilisant Javascript.`,
 	description2: `Profil : Après avoir passé six ans à produire de la musique à l'image dans
 	une structure que j’ai créée : La Grande Table Productions, j’ai décidé de
 	me former dans le secteur de l’informatique qui m’a toujours passionné.
