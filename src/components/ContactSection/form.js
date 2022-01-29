@@ -52,15 +52,15 @@ const Form = (props) => {
             <div >
                 <a href="#contactpage" title="Close" className="modal-close" onClick={props.handleClick}>Close</a>
                 <Formulaire className="waypoint animated pop-in" data-animation="pop-in" data-delay=".5s" id="contact-form" data-netlify="true" onSubmit={handleSubmit}>
-                    <input placeholder="Name" type="text" name="name" onChange={handleChange} required/>
-                    <input placeholder="Enter email" type="email" name="email" onChange={handleChange} required/>
-                    <textarea placeholder="Your Message" type="text" name="message" rows="6" onChange={handleChange} required></textarea>
+                    <input placeholder="Name" type="text" name="name" onChange={handleChange} value={name} required/>
+                    <input placeholder="Enter email" type="email" name="email" onChange={handleChange} value={email} required/>
+                    <textarea placeholder="Your Message" type="text" name="message" rows="6" onChange={handleChange} value={message} required></textarea>
                     {/* <div id="success">
                         <div>
                             Your message was sent successfully. Thanks!<span id="close" class="mdi mdi-close"></span>
                         </div>
                     </div> */}
-                    <Submit type="submit" onSubmit={props.handleClick}>SUBMIT</Submit>
+                    <Submit type="submit" >SUBMIT</Submit>
                     {/* <input class="button" type="submit" id="submit" value="SUBMIT"/> */}
                 </Formulaire>
 
