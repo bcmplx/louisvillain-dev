@@ -59,7 +59,7 @@ const Form = (props) => {
                 </Formulaire>
                 <Success success={success}>
                     <div>
-                        Your message was sent successfully. Thanks!<span id="close" class="mdi mdi-close"></span>
+                        Your message was sent successfully. Thanks!<span id="close" className="mdi mdi-close"></span>
                     </div>
                     <ExtButton to ='' href="#contactpage"
                         spy={true}
@@ -141,4 +141,8 @@ const Success = styled.div`
     a {
         margin: auto;
     }
+
+    @media screen and (max-width: 768px) {
+        padding: 0;
+      }
 `
