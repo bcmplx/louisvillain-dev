@@ -1,25 +1,71 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../Modal.css';
 import styled from 'styled-components/macro';
 
 const Form = (props) => {
 
+    const encode = (data) => {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&");
+      }
+
+      const [name, setName] = useState("")
+      const [email, setEmail] = useState("")
+      const [message, setMessage] = useState("")
+    
+      
+    
+        /* Here’s the juicy bit for posting the form submission */
+    
+        const handleSubmit = e => {
+          fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "contact", name, email, message })
+          })
+            .then(() => alert("Success!"))
+            .catch(error => alert(error));
+    
+          e.preventDefault();
+          props.setIsModal(false)
+        };
+    
+        // this.setState({ [e.target.name]: e.target.value });
+
+        const handleChange = e => {
+            if(e.target.name === "name")
+            {setName(e.target.value)}
+            else if (e.target.name === "email"){
+                setEmail(e.target.value)
+            }
+            else if (e.target.name === "message"){
+                setMessage(e.target.value)
+            }
+        }
+    
+    
+
+
 	return (
         <div id="open-modal" className="modal-window">
             <div >
                 <a href="#contactpage" title="Close" className="modal-close" onClick={props.handleClick}>Close</a>
-                <Formulaire className="waypoint animated pop-in" data-animation="pop-in" data-delay=".5s" id="contact-form">
-                    <input placeholder="Name" type="text" name="name" required=""/>
-                    <input placeholder="Enter email" type="email" name="email" required=""/>
-                    <textarea placeholder="Your Message" type="text" name="message" rows="6"></textarea>
+                <Formulaire className="waypoint animated pop-in" data-animation="pop-in" data-delay=".5s" id="contact-form" data-netlify="true" onSubmit={handleSubmit}>
+                    <input placeholder="Name" type="text" name="name" onChange={handleChange} required/>
+                    <input placeholder="Enter email" type="email" name="email" onChange={handleChange} required/>
+                    <textarea placeholder="Your Message" type="text" name="message" rows="6" onChange={handleChange} required></textarea>
                     {/* <div id="success">
                         <div>
                             Your message was sent successfully. Thanks!<span id="close" class="mdi mdi-close"></span>
                         </div>
                     </div> */}
-                    <Submit type="submit">SUBMIT</Submit>
+                    <Submit type="submit" onSubmit={props.handleClick}>SUBMIT</Submit>
                     {/* <input class="button" type="submit" id="submit" value="SUBMIT"/> */}
                 </Formulaire>
+
+
+                <input type="hidden" name="form-name" value="contacttest" />
             </div>
         </div>
 		
