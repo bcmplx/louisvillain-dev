@@ -4,19 +4,19 @@ import styled from 'styled-components/macro';
 export const ContactContainer = styled.div`
 	color: #fefefe;
 	background: ${({lightBg}) => (lightBg ? '#f9f9f9' : '#152436')};
-	height: 1000px;
+	height: 900px;
 	overflow: hidden;
 
 
 	@media screen and (max-width: 768px) {
 		padding: 100px 0;
 		/* height: 1100px; */
-		height: ${({nextPage}) => (nextPage ? '2000px' : '1100px')};
+		height: ${({nextPage}) => (nextPage ? '2000px' : '950px')};
 	}
 	
 	@media screen and (max-width: 520px) {
 		padding: 70px 0;
-		height: ${({nextPage}) => (nextPage ? '1500px' : '1180px')};
+		height: ${({nextPage}) => (nextPage ? '1500px' : '850px')};
 	}
 `;
 
@@ -31,6 +31,10 @@ export const ContactWrapper = styled.div`
 	padding: 0 24px;
 	justify-content: center;
 
+	@media screen and (max-width: 520px) {
+		height: 700px;
+	}
+
 `;
 
 export const ContactRow = styled.div`
@@ -42,7 +46,7 @@ export const ContactRow = styled.div`
 
 	@media screen and (max-width: 768px) {
 		grid-auto-columns: ${({arrow}) => (arrow ? `1fr` : `minmax(auto, 1fr)`)};
-		grid-Contact-areas: ${({imgStart}) => (imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`)};  
+		grid-template-areas: ${({imgStart}) => (imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`)};  
 		/* padding: 0.3rem; */
 		padding: ${({nextPage}) => (nextPage ? '0.3rem' : null)};
 		border: ${({nextPage}) => (nextPage ? '1px solid #fefefe' : null)};

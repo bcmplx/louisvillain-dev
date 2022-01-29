@@ -47,7 +47,7 @@ export const NavLogo = styled(LinkScroll)`
 	margin-left: 24px;
 	font-weight: bold; 
 	text-decoration: none;
-	visibility: ${({displaylogo}) => (displaylogo ? 'visible' : 'hidden')};
+	visibility: ${({displayLogo}) => (displayLogo ? 'visible' : 'hidden')};
 	transition: all 0.9s ease-out;
 
 

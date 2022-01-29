@@ -70,7 +70,7 @@ const ContactSection = () => {
 			animationOutDuration={1000} 
 			isVisible={true}
 		>
-			<ExtButton href="mailto:louis.villainl@gmail.com"
+			<ExtButton to ='' href="mailto:louis.villainl@gmail.com"
 				spy={true}
 				exact="true"
 				offset={-80}
@@ -86,7 +86,7 @@ const ContactSection = () => {
 			animationOutDuration={1000} 
 			isVisible={false}
 		>
-			<Button href='mailto:louis.villainl@gmail.com'
+			<Button to ='' href='mailto:louis.villainl@gmail.com'
 				spy={true}
 				exact="true"
 				offset={-80}

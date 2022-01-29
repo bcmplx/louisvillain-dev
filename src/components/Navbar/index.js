@@ -69,7 +69,10 @@ const Navbar = ({toggle}) => {
 			<IconContext.Provider value={{color: '#fefefe'}}>
 				<Nav navbarBg={navbarBg} >
 					<NavbarContainer>
-						<NavLogo to="home" displaylogo={displayLogo} title="Back to top" smooth={true} spy={true}>Louis Villain</NavLogo>
+						{displayLogo ?  (
+							<NavLogo to="home" title="Back to top" smooth={true} spy={true}>Louis Villain</NavLogo>
+						) : (null)}
+						
 
 						<MobileIcon onClick={toggle}>
 							<FaBars />

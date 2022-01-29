@@ -36,7 +36,6 @@ const Home = () => {
 			
 			<FormationsSection />
 			<ContactSection />
-			{/* <TemplateSections {...contact} /> */}
 			<Footer /> 
 		</>
 	);
