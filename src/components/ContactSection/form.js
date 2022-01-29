@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../Modal.css';
 import styled from 'styled-components/macro';
+import { ExtButton } from '../Services/ButtonElement';
 
 const Form = (props) => {
 
@@ -13,57 +14,62 @@ const Form = (props) => {
       const [name, setName] = useState("")
       const [email, setEmail] = useState("")
       const [message, setMessage] = useState("")
+      const [success, setSuccess] = useState(false)
     
-      
     
-        /* Here’s the juicy bit for posting the form submission */
-    
-        const handleSubmit = e => {
-          fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contacttest", name, email, message })
-          })
-            .then(() => alert("Success!"))
-            .catch(error => alert(error));
-    
-          e.preventDefault();
-          props.setIsModal(false)
-        };
-    
-        // this.setState({ [e.target.name]: e.target.value });
+    const handleSubmit = e => {
+        fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contacttest", name, email, message })
+        })
+        .then(() => {
+            // alert("Success!")
+            setSuccess(true)
+        })
+        .catch(error => alert(error));
 
-        const handleChange = e => {
-            if(e.target.name === "name")
-            {setName(e.target.value)}
-            else if (e.target.name === "email"){
-                setEmail(e.target.value)
-            }
-            else if (e.target.name === "message"){
-                setMessage(e.target.value)
-            }
+        e.preventDefault();
+        props.setIsModal(false)
+    };
+
+
+    const handleChange = e => {
+        if(e.target.name === "name")
+        {setName(e.target.value)}
+        else if (e.target.name === "email"){
+            setEmail(e.target.value)
         }
+        else if (e.target.name === "message"){
+            setMessage(e.target.value)
+        }
+    }
     
-    
-
 
 	return (
         <div id="open-modal" className="modal-window">
             <div >
                 <a href="#contactpage" title="Close" className="modal-close" onClick={props.handleClick}>Close</a>
-                <Formulaire className="waypoint animated pop-in" data-animation="pop-in" data-delay=".5s" id="contact-form" data-netlify="true" onSubmit={handleSubmit}>
+                <Formulaire className="waypoint animated pop-in" success={success} data-animation="pop-in" data-delay=".5s" id="contact-form" data-netlify="true" onSubmit={handleSubmit}>
                     <input placeholder="Name" type="text" name="name" onChange={handleChange} value={name} required/>
                     <input placeholder="Enter email" type="email" name="email" onChange={handleChange} value={email} required/>
                     <textarea placeholder="Your Message" type="text" name="message" rows="6" onChange={handleChange} value={message} required></textarea>
-                    {/* <div id="success">
-                        <div>
-                            Your message was sent successfully. Thanks!<span id="close" class="mdi mdi-close"></span>
-                        </div>
-                    </div> */}
+                    {/*  */}
                     <Submit type="submit" >SUBMIT</Submit>
-                    {/* <input class="button" type="submit" id="submit" value="SUBMIT"/> */}
                 </Formulaire>
-
+                <Success success={success}>
+                    <div>
+                        Your message was sent successfully. Thanks!<span id="close" class="mdi mdi-close"></span>
+                    </div>
+                    <ExtButton to ='' href="#contactpage"
+                        spy={true}
+                        exact="true"
+                        offset={-80}
+                        primary={1} 
+                        dark={0}
+                    >Close
+                    </ExtButton>
+                </Success>
 
                 <input type="hidden" name="form-name" value="contacttest" />
             </div>
@@ -75,7 +81,7 @@ const Form = (props) => {
 export default Form;
 
 const Formulaire = styled.form`
-    display: flex;
+    display: ${({success}) => success ? 'none' : 'flex'};
     flex-direction: column;
     width: clamp(300px, 50vw, 900px);
     margin: 3rem auto;
@@ -119,5 +125,20 @@ const Submit = styled.button`
             transition: all 0.3s ease-in-out;
             color: #0A192F;
             background: #64FFDA;
+    }
+`
+
+const Success = styled.div`
+    display: ${({success}) => success ? 'flex' : 'none'};
+    color: #fefefe;
+    flex-direction: column;
+    padding: 1rem;
+
+    & > div {
+        margin: 1rem;   
+    }
+
+    a {
+        margin: auto;
     }
 `

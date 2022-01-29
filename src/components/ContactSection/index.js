@@ -104,6 +104,7 @@ const ContactSection = () => {
 	const AnimDescription = animatedCss(`Une idée ? Un projet ? Une question ? N'hésitez pas à me demander un devis (gratuit) ! `, 2000, 'fadeInLeft', 'fadeOutLeft');
 
 	const [isModal, setIsModal] = useState(false)
+	
 
     const handleClick = () => {
 		console.log(isModal)
