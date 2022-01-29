@@ -2,6 +2,7 @@ import React, {useState, useEffect } from 'react';
 import { Button, ExtButton } from '../Services/ButtonElement';
 import {Animated} from 'react-animated-css';
 import img from '../../images/coding_11.svg';
+
 import {ContactContainer, 
 	ContactWrapper, 
 	ContactRow, 
@@ -15,6 +16,7 @@ import {ContactContainer,
 	ImgWrap,
 	Img} from './ContactElements';
 import { useMediaQuery } from 'react-responsive';
+import Form from './form';
 // import Modal from '../Modal';
 // import Dip from '../RealisationsSection/dip';
 // import Travel from '../RealisationsSection/travel';
@@ -70,7 +72,8 @@ const ContactSection = () => {
 			animationOutDuration={1000} 
 			isVisible={true}
 		>
-			<ExtButton to ='' href="mailto:louis.villainl@gmail.com"
+			{/* <ExtButton to ='' href="mailto:louis.villainl@gmail.com" */}
+			<ExtButton to ='' href="#open-modal"
 				spy={true}
 				exact="true"
 				offset={-80}
@@ -100,6 +103,20 @@ const ContactSection = () => {
 	const AnimTopLine = animatedCss('Me contacter', 1000, "bounceInDown", 'fadeOutLeft');
 	const AnimDescription = animatedCss(`Une idée ? Un projet ? Une question ? N'hésitez pas à me demander un devis (gratuit) ! `, 2000, 'fadeInLeft', 'fadeOutLeft');
 
+	const [isModal, setIsModal] = useState(false)
+
+    const handleClick = () => {
+		console.log(isModal)
+        if (!isModal) {
+            setIsModal(true)
+            document.body.style.overflow = "hidden"
+        }
+        else {
+            setIsModal(false)
+            document.body.style.overflow = "auto"
+        }
+        
+    }
 
 	useEffect(() => {
 		window.addEventListener('scroll', changeDisplay);
@@ -120,9 +137,12 @@ const ContactSection = () => {
 										{AnimTitle}
 									</Heading>
 									<Subtitle darkText={false}>{AnimDescription}</Subtitle>
-									<BtnWrap>
+									<BtnWrap onClick={handleClick}>
 										{Btn}
 									</BtnWrap>
+									<Form isModal={isModal} setIsModal={setIsModal} handleClick={handleClick}/>
+									
+									
 								</TextWrapper>
 							</Column1>
 							

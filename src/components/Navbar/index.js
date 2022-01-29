@@ -70,8 +70,10 @@ const Navbar = ({toggle}) => {
 				<Nav navbarBg={navbarBg} >
 					<NavbarContainer>
 						{displayLogo ?  (
-							<NavLogo to="home" title="Back to top" smooth={true} spy={true}>Louis Villain</NavLogo>
-						) : (null)}
+							<NavLogo to="home" title="Back to top" smooth={true} spy={true} id='home'>Louis Villain</NavLogo>
+						) : (
+							<NavLogo to="home" title="Back to top" smooth={true} spy={true}></NavLogo>
+						)}
 						
 
 						<MobileIcon onClick={toggle}>
